@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Quiz Time!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
-    <div>
-        
+    <nav class=" row navbar mx-auto navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Java Brain Training</a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <!-- <div class="collapse navbar-collapse" id="navbarText"> -->
+        <ul class="navbar-nav col-12 col-sm-3">
+            <li class=" nav-item active">
+                <a class="nav-link" href="#">High Score <span class="sr-only"></span></a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav mr-auto col-sm-4 col-md-2">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Quiz Rules<span class="sr-only"></span></a>
+            </li>
+
+        </ul>
+        <!-- Create code to make random quip or tag line show from a list -->
+        <span class="navbar-text">
+            Quipy quip, quip quipy
+        </span>
+        <!-- end spot for random quip -->
+        <!-- </div> -->
+    </nav>
+    <br>
+    <div class="container" style=" text-align: center;">
+        <div class="jumbotron">
+            <button>
+                <h1>Start the Quiz</h1>
+            </button>
+            <p>You will be tested on your JavaScript Knowledge. The quiz is timed, and for every wrong answer time will
+                be deducted from your remaining time. Try to answer all questions quickly and correctly to get the top
+                score!</p>
+        </div>
     </div>
-    
+
+
 </body>
+
 </html>
