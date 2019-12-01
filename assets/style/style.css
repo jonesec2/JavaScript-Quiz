@@ -1,3 +1,50 @@
-.page-header {
-    width:100%;
+html,
+body {
+  height: 100%;
+}
+
+.link {
+    max-width: 120px !important;
+}
+
+.jumbotron {
+    background-color: #343a40;
+}
+
+.questions {
+    background-color: #343a40;
+    min-height: 30pc;
+}
+
+#start:hover { 
+    border-color: transparent;
+    outline: 0 !important;
+}
+
+#start {
+    border-color: transparent;
+    text-decoration: none !important;
+    outline: 0 !important;
+    border-color: transparent;
+    color: white;
+}
+  
+
+p {
+    color: white;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 68px;
+}
+
+@media (max-width: 575px) {
+    #footer {bottom: auto;}
+}
+
+@media (max-height: 575px) {
+    #footer {bottom: auto;}
 }
