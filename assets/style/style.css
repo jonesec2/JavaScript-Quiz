@@ -48,3 +48,8 @@ p {
 @media (max-height: 575px) {
     #footer {bottom: auto;}
 }
+
+@media (min-width: 991px) {
+    #quizStart {margin-left: 20px;}
+    #quizStart {margin-right: 20px;}
+}
