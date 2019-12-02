@@ -36,17 +36,28 @@
         </nav>
         <br>
         <div class="container" style=" text-align: center;">
-            <div class="jumbotron questions">
+            <div class="jumbotron px-0 py-0 pt-3 questions">
+                <h2 class="pt-2"></h2>
+                <div class="quiz-container">
+                    <div id="quiz" class="container questionText answer"> </div>
 
+                    <h2 id="question" class="pb-4 mx-3"></h2>
+                    <div class="buttons">
+                        <button id="btn0" class="col-12 col-sm-4 mr-2" ><span id="choice0"></span></button>
+                        <button id="btn1" class="col-12 col-sm-4 ml-2"><span id="choice1"></span></button>
+                        <button id="btn2" class="col-12 col-sm-4 mr-2"><span id="choice2"></span></button>
+                        <button id="btn3" class="col-12 col-sm-4 ml-2"><span id="choice3"></span></button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <footer id="footer" class="py-4 bg-dark text-white-50">
-        <div class="footer container text-center">
-            <small> JavaBrain &copy; 2019</small>
-        </div>
-    </footer>
 
+        <footer id="footer" class="py-4 bg-dark text-white-50">
+            <div class="footer container text-center">
+                <small> JavaBrain &copy; 2019</small>
+            </div>
+        </footer>
+        <script src="assets/script/script2.js"></script>
 
 </body>
 

@@ -13,7 +13,8 @@ body {
 
 .questions {
     background-color: #343a40;
-    min-height: 30pc;
+    min-height: 31pc;
+    color: white;
 }
 
 #start:hover { 
@@ -28,10 +29,48 @@ body {
     border-color: transparent;
     color: white;
 }
+
+h1 {
+    margin: 0 0 0 0px;
+}
+
+.gameOver {
+    padding-bottom: 10px;
+}
+
+
+button {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    background-color: #279;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+button:hover{
+    background-color: #38a;
+}
   
 
+
+.quiz-container{
+    position: relative;
+    height: 200px;
+    margin-top: 40px;
+}
+
+  
 p {
     color: white;
+}
+
+#quizStart {
+    font-size: 22px;
 }
 
 #footer {
@@ -41,13 +80,28 @@ p {
     height: 68px;
 }
 
-@media (max-width: 575px) {
-    #footer {bottom: auto;}
+.questionText {
+    color: white;
 }
+
 
 @media (max-height: 575px) {
     #footer {bottom: auto;}
 }
+
+@media (max-width: 575px) {
+    #question {font-size: 18px;}
+    .pb-4 {padding-bottom: 8px !important;}
+    button {font-size: 18px;}
+    #footer {bottom: auto;}
+    .ml-2 {margin-left: 0px !important;}
+    .mr-2 {margin-right: 0px !important;}
+}
+
+@media (max-width: 361px) {
+    #footer {bottom: auto;}
+}
+
 
 @media (min-width: 991px) {
     #quizStart {margin-left: 20px;}
