@@ -1,48 +1,30 @@
-quizTimer();
+
 
 function Quiz(questions) {
     this.score = 0;
     this.questions = questions;
     this.questionIndex = 0;
+    this.timeLeft = 0;
+    quizTimer();
 }
 
 Quiz.prototype.getQuestionIndex = function () {
     return this.questions[this.questionIndex];
 }
 
-// quiz timer
-var timerEl = document.getElementById("timer");
-
-function quizTimer() { 
-    var timeLeft = 75;
-
-    var timeInterval = setInterval(function () {
-        timerEl.textContent = "Time remaining: " + timeLeft + " second(s)";
-        timeLeft--
-
-        if (timeLeft <= -1) {
-            timeLeft = -1
-            clearInterval(timeInterval);
-            showScores();
-        }
-        if (quizVar.isEnded()) {
-            console.log(timeLeft);
-            clearInterval(timeInterval);
-            timeLeft = quizVar.score;
-        }
-    }, 1000);
-};
 
 Quiz.prototype.guess = function (answer) {
 
     if (this.getQuestionIndex().isCorrectAnswer(answer)) {
-        this.score++;
+        // this.score++;
         var rightAnswer = document.getElementById("rightWrong")
         rightAnswer.innerHTML = "<hr> Right! <hr>"
     }
-    else {
+    if (this.getQuestionIndex().isCorrectAnswer(!answer)){
         var wrongAnswer = document.getElementById("rightWrong")
         wrongAnswer.innerHTML = "<hr> Wrong! <hr>"
+    } else {
+
     }
     this.questionIndex++;
 }
@@ -92,6 +74,29 @@ function guess(id, guess) {
     }
 };
 
+// quiz timer
+var timerEl = document.getElementById("timer");
+
+function quizTimer() { 
+    let timeLeft = 75;
+
+    var timeInterval = setInterval(function () {
+        timerEl.textContent = "Time remaining: " + timeLeft + " second(s)";
+        timeLeft--
+
+        if (timeLeft <= -1) {
+            timeLeft = -1
+            clearInterval(timeInterval);
+            showScores();
+            quizVar.score = 0
+        }
+        if (quizVar.isEnded()) {
+            clearInterval(timeInterval);
+            localStorage.setItem("HighScore", timeLeft +1)
+        }
+    }, 1000);
+};
+
 var submitButton = document.getElementById("submitHighScore")
 var highScoreInput = document.querySelector("#scoreName")
 var msgDiv = document.querySelector("#msg");
@@ -99,7 +104,7 @@ var msgDiv = document.querySelector("#msg");
 
 function showScores() {
     var gameOverHTML = "<hr><h1 class='gameOver'>Game Over!</h1>";
-    gameOverHTML += "<h2 id='score'> Your score: " + quizVar.score + "</h2>";
+    gameOverHTML += "<h2 id='score'> Your score: " + localStorage.getItem("HighScore") + "</h2>";
     gameOverHTML += "<h4 id='enterScore'> Enter your name to the High Scores list</h4>";
     gameOverHTML += "<form method='POST'><label for='highScore'>Name: </label> <input type='text' name='highScore' id='scoreName' placeholder='Spongebob'/> <button id='submitHighScore'>Submit</button></form> ";
     gameOverHTML += "<div id='msg'></div> <hr>"
@@ -133,23 +138,9 @@ function showScores() {
         } else {
             displayMessage("success", element.innerHTML = goToScore)
             localStorage.setItem("Name", scoreName);
-            localStorage.setItem("HighScore", quizVar.score)
         }
     })
 };
-
-// attempt at dynamic high scores
-// var createHighScores = function (name, score) {
-//     var userEntry = JSON.parse(localStorage.getItem('names')) || [];
-
-//     var newHighScore = {
-
-//     };
-
-//     userEntry.push(newHighScore);
-
-//     localStorage.setItem('names', JSON.stringify(userEntry));
-// };
 
 
 // use local storage

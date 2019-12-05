@@ -127,6 +127,7 @@ p {
     #msg {font-size: 16px;}
     form {margin-top: 10px;}
     #timer {font-size: 16px;}
+    h1 {font-size: 20px;}
 }
 
 @media (max-width: 260px) {
