@@ -12,7 +12,8 @@ Quiz.prototype.getQuestionIndex = function () {
 
 // quiz timer
 var timerEl = document.getElementById("timer");
-function quizTimer() {
+
+function quizTimer() { 
     var timeLeft = 75;
 
     var timeInterval = setInterval(function () {
@@ -24,8 +25,10 @@ function quizTimer() {
             clearInterval(timeInterval);
             showScores();
         }
-        else if (getQuestionIndex().isCorrectAnswer(!answer)) {
-            timeLeft = timeLeft - 5;
+        if (quizVar.isEnded()) {
+            console.log(timeLeft);
+            clearInterval(timeInterval);
+            timeLeft = quizVar.score;
         }
     }, 1000);
 };
