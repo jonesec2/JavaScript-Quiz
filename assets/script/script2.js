@@ -12,40 +12,39 @@ Quiz.prototype.getQuestionIndex = function () {
     return this.questions[this.questionIndex];
 }
 
-
+// correct answer and next question
 Quiz.prototype.guess = function (answer) {
 
     if (this.getQuestionIndex().isCorrectAnswer(answer)) {
-        // this.score++;
         var rightAnswer = document.getElementById("rightWrong")
         rightAnswer.innerHTML = "<hr> Right! <hr>"
     }
-    if (this.getQuestionIndex().isCorrectAnswer(!answer)){
+    else {
         var wrongAnswer = document.getElementById("rightWrong")
         wrongAnswer.innerHTML = "<hr> Wrong! <hr>"
-    } else {
-
-    }
+        quizTimer.timeLeft - 10;
+    } 
     this.questionIndex++;
 }
 
+// lets quiz know when to stop
 Quiz.prototype.isEnded = function () {
     return this.questionIndex === this.questions.length;
 }
 
-
+// setting question choices
 function Question(text, choices, answer) {
     this.text = text;
     this.choices = choices;
     this.answer = answer;
 }
 
-
+// let's quiz know if choice is correct answer
 Question.prototype.isCorrectAnswer = function (choice) {
     return this.answer === choice;
 }
 
-
+// creates the quiz on page
 function populate() {
     if (quizVar.isEnded()) {
         showScores();
@@ -66,6 +65,7 @@ function populate() {
     }
 };
 
+// defines guessing by buttons
 function guess(id, guess) {
     var button = document.getElementById(id);
     button.onclick = function () {
@@ -74,6 +74,7 @@ function guess(id, guess) {
     }
 };
 
+
 // quiz timer
 var timerEl = document.getElementById("timer");
 
@@ -81,18 +82,18 @@ function quizTimer() {
     let timeLeft = 75;
 
     var timeInterval = setInterval(function () {
-        timerEl.textContent = "Time remaining: " + timeLeft + " second(s)";
+        timerEl.innerHTML = "<br> Time remaining: " + timeLeft + " second(s) <br><br>";
         timeLeft--
 
         if (timeLeft <= -1) {
             timeLeft = -1
             clearInterval(timeInterval);
             showScores();
-            quizVar.score = 0
+            localStorage.setItem("HighScore", timeLeft + 1)
         }
         if (quizVar.isEnded()) {
             clearInterval(timeInterval);
-            localStorage.setItem("HighScore", timeLeft +1)
+            localStorage.setItem("HighScore", timeLeft + 1)
         }
     }, 1000);
 };
@@ -104,8 +105,8 @@ var msgDiv = document.querySelector("#msg");
 
 function showScores() {
     var gameOverHTML = "<hr><h1 class='gameOver'>Game Over!</h1>";
-    gameOverHTML += "<h2 id='score'> Your score: " + localStorage.getItem("HighScore") + "</h2>";
-    gameOverHTML += "<h4 id='enterScore'> Enter your name to the High Scores list</h4>";
+    // gameOverHTML += "<h2 id='score'> Your score: " + localStorage.getItem("HighScore") + "</h2>";
+    gameOverHTML += "<br><br><h4 id='enterScore'> Enter your name to the High Scores list</h4>";
     gameOverHTML += "<form method='POST'><label for='highScore'>Name: </label> <input type='text' name='highScore' id='scoreName' placeholder='Spongebob'/> <button id='submitHighScore'>Submit</button></form> ";
     gameOverHTML += "<div id='msg'></div> <hr>"
     var element = document.getElementById("quiz");

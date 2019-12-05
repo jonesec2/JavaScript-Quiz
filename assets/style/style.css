@@ -118,19 +118,35 @@ p {
     #footer {bottom: auto;}
 } */
 
-@media (max-width: 450px) {
+
+@media (max-width: 720px) {
     #score {font-size: 16px;}
     .gameOver {font-size: 20px;}
     #enterScore {font-size: 16px;}
     #highScore {font-size: 16px;}
     #submitHighScore {margin-top: 10px;}
     #msg {font-size: 16px;}
-    form {margin-top: 10px;}
-    #timer {font-size: 16px;}
+    form {margin-top: 15px;}
+    #timer {font-size: 20px;}
     h1 {font-size: 20px;}
 }
 
-@media (max-width: 260px) {
+@media (max-width: 626px) {
+    #question {font-size: 22px;}
+    .pb-4 {padding-bottom: 8px !important;}
+    button {font-size: 16px;}
+    #footer {bottom: auto;}
+    .ml-2 {margin-left: 0px !important;}
+    .mr-2 {margin-right: 0px !important;}
+}
+
+@media (max-width: 400px) {
+    #question {font-size: 14px;}
+    .pb-4 {padding-bottom: 8px !important;}
+    button {font-size: 14px;}
+    #footer {bottom: auto;}
+    .ml-2 {margin-left: 0px !important;}
+    .mr-2 {margin-right: 0px !important;}
     #score {font-size: 12px;}
     .gameOver {font-size: 14px;}
     #enterScore {font-size: 12px;}
@@ -140,14 +156,10 @@ p {
     #timer {font-size: 12px;}
 }
 
-@media (max-width: 575px) {
-    #question {font-size: 18px;}
-    .pb-4 {padding-bottom: 8px !important;}
-    button {font-size: 18px;}
-    #footer {bottom: auto;}
-    .ml-2 {margin-left: 0px !important;}
-    .mr-2 {margin-right: 0px !important;}
-}
+
+
+
+
 
 @media (max-width: 361px) {
     #footer {bottom: auto;}
