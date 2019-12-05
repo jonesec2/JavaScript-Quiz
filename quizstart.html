@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body background>
     <div id="page-content">
         <nav class=" row navbar mx-auto navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand col-sm-12 col-lg-2 pl-0 py-2" href="index.html">JavaBrain Training</a>
@@ -43,21 +44,30 @@
 
                     <h2 id="question" class="pb-4 mx-3"></h2>
                     <div class="buttons">
-                        <button id="btn0" class="col-12 col-sm-4 mr-2" ><span id="choice0"></span></button>
+                        <button id="btn0" class="col-12 col-sm-4 mr-2"><span id="choice0"></span></button>
                         <button id="btn1" class="col-12 col-sm-4 ml-2"><span id="choice1"></span></button>
                         <button id="btn2" class="col-12 col-sm-4 mr-2"><span id="choice2"></span></button>
                         <button id="btn3" class="col-12 col-sm-4 ml-2"><span id="choice3"></span></button>
+                    </div>
+                    <div>
+                        <p id="rightWrong"></p>
+                    </div>
+                    <div class="timer">
+                        <h3 id="timer"></h3>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer id="footer" class="py-4 bg-dark text-white-50">
-            <div class="footer container text-center">
-                <small> JavaBrain &copy; 2019</small>
-            </div>
-        </footer>
-        <script src="assets/script/script2.js"></script>
+    </div>
+
+    <footer id="footer" class="py-4 bg-dark text-white-50">
+        <div class="footer container text-center">
+            <small> JavaBrain &copy; 2019</small>
+        </div>
+    </footer>
+    </div>
+    <script src="assets/script/script2.js"></script>
 
 </body>
 
