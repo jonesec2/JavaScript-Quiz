@@ -140,6 +140,9 @@ p {
     left:10px;
 }
 
+@media (max-width: 991px) {
+    #footerRules {bottom: auto;}
+}
 
 @media (max-width: 720px) {
     #score {font-size: 16px;}
