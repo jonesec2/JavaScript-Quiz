@@ -4,9 +4,12 @@ function Quiz(questions) {
     this.score = 0;
     this.questions = questions;
     this.questionIndex = 0;
-    this.timeLeft = 0;
+    // this.timeLeft = 0;
     quizTimer();
 }
+
+var timeLeft = 75;
+
 
 Quiz.prototype.getQuestionIndex = function () {
     return this.questions[this.questionIndex];
@@ -22,7 +25,7 @@ Quiz.prototype.guess = function (answer) {
     else {
         var wrongAnswer = document.getElementById("rightWrong")
         wrongAnswer.innerHTML = "<hr> Wrong! <hr>"
-        quizTimer.timeLeft - 10;
+        timeLeft -= 10;
     } 
     this.questionIndex++;
 }
@@ -74,16 +77,28 @@ function guess(id, guess) {
     }
 };
 
+var questions = [
+    new Question("Question 1: What does DOM stand for?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
+    new Question("Question 2: You Like Jazz?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
+    new Question("Question 3: Who is George Washington?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
+    new Question("Question 4: Can a woodchuck chuck wood?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
+    new Question("Question 5: Zzzsf sdddf sss", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg")
+];
+
+// create quiz
+var quizVar = new Quiz(questions);
 
 // quiz timer
 var timerEl = document.getElementById("timer");
+var highScoreName = ""
 
 function quizTimer() { 
-    let timeLeft = 75;
+    // var timeLeft = 75;
 
     var timeInterval = setInterval(function () {
         timerEl.innerHTML = "<br> Time remaining: " + timeLeft + " second(s) <br><br>";
         timeLeft--
+        // console.log(timeLeft)
 
         if (timeLeft <= -1) {
             timeLeft = -1
@@ -173,8 +188,6 @@ var questions = [
     new Question("Question 5: Zzzsf sdddf sss", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg")
 ];
 
-// create quiz
-var quizVar = new Quiz(questions);
 
 // display quiz
 populate();
