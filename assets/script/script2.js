@@ -78,11 +78,11 @@ function guess(id, guess) {
 };
 
 var questions = [
-    new Question("Question 1: What does DOM stand for?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
-    new Question("Question 2: You Like Jazz?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
-    new Question("Question 3: Who is George Washington?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
-    new Question("Question 4: Can a woodchuck chuck wood?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
-    new Question("Question 5: Zzzsf sdddf sss", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg")
+    new Question("Question 1: Inside which HTML element do we put the JavaScript?", ["1. < script >", "2. < javascript >", "3. < scripting >", "4. < js >"], "1. < script >"),
+    new Question("Question 2: How do you write 'Hello World' in an alert box?", ['1. msg("Hello World");', '2.  msgBox("Hello World");', '3.  alertBox("Hello World");', '4. alert("Hello World");'], '4. alert("Hello World");'),
+    new Question("Question 3: How to write an IF statement in JavaScript?", ["1. if (i===5)", "2. if i==5 then", "3. if i=5 then", "4. if i=5"], "1. if (i===5)"),
+    new Question("Question 4: How does a FOR loop start?", ["1. for i = 1 to 5", "2. for (i < 5; i++)", "3. for (i = 0; i <= 5, i++)", "4. for ( i = 0; i <= 5)"], "3. for (i = 0; i <= 5, i++)"),
+    new Question("Question 5: Who is the best coder?", ["1. You!", "2. Me!", "3. John!", "4. Spongebob!"], "4. Spongebob")
 ];
 
 // create quiz
@@ -90,7 +90,7 @@ var quizVar = new Quiz(questions);
 
 // quiz timer
 var timerEl = document.getElementById("timer");
-var highScoreName = ""
+
 
 function quizTimer() { 
     // var timeLeft = 75;
@@ -181,8 +181,8 @@ if (usersScore !== null) {
 
 // create questions here
 var questions = [
-    new Question("Question 1: What does DOM stand for?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
-    new Question("Question 2: You Like Jazz?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
+    new Question("Question 1: Inside which HTML element do we put the JavaScript?", ["1. <script>", "2. <javascript>", "3. <scripting>", "4. <js>"], "1. <script>"),
+    new Question("Question 2: How do you write 'Hello World' in an alert box?", ['1. msg("Hello World");', '2.  msgBox("Hello World");', '3.  alertBox("Hello World");', '4.  alert("Hello World");'], '4. alert("Hello World");'),
     new Question("Question 3: Who is George Washington?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
     new Question("Question 4: Can a woodchuck chuck wood?", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg"),
     new Question("Question 5: Zzzsf sdddf sss", ["1. sdfg", "2. sdfg", "3. dfg", "4. fg"], "1. sdfg")
